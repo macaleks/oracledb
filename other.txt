@@ -1,0 +1,25 @@
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        try {
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        }
+        catch(ClassNotFoundException e) {
+            System.out.println(e.getException());
+            System.exit(1);
+        }
+
+
+        try {
+            DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
+        }
+        catch(SQLException e) {
+            System.out.println("Oops! Got a SQL error: " + e.getMessage(  ));
+            System.exit(1);
+        }
+    }
+}
