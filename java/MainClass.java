@@ -30,6 +30,7 @@ public class MainClass {
                 break;
             }
             System.out.println(date);
+            stmt.executeQuery("INSERT INTO tester1.t_number(A) VALUES(12) LOG ERRORS INTO TESTER1.err$_t_number REJECT LIMIT 0");
         } catch (Exception e) {
             e.printStackTrace();
         }
